@@ -1,4 +1,3 @@
-from sched import scheduler
 import requests
 from mail import mail
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -28,6 +27,6 @@ def getYellowIpe():
                 f.write(f'{idVacancie}\n')
 
 
-sched.add_job(getYellowIpe, "interval", seconds=30)
+sched.add_job(getYellowIpe, "interval", minutes=60)
 
 sched.start()
